@@ -7,10 +7,8 @@
   * @package activeCollab.modules.projectmenuobjectcount
   * @subpackage controllers
   *
-  * module to add 'expand, collapse' button to checklists
+  * module to append project menu tabs with the count of the objects in each
   * Use this Code: $wireframe->addPageAction($text, $url)
-  *
-  * Currently set to operate on checklists
   */
   class ProjectmenuobjectcountModule extends Module {
    
