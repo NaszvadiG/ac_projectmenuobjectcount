@@ -65,10 +65,10 @@
     */
    
     function defineHandlers(&$events) {
-    $events->listen('on_get_project_object_types', 'on_get_project_object_types');
+    $events->listen('on_project_tabs', 'on_project_tabs');
    /*
-	 	$events->listen('on_project_tabs', 'on_project_tabs');
-    $events->listen('on_milestone_objects', 'on_milestone_objects');
+	  $events->listen('on_get_project_object_types', 'on_get_project_object_types');
+		$events->listen('on_milestone_objects', 'on_milestone_objects');
     $events->listen('on_milestone_objects_by_visibility', 'on_milestone_objects_by_visibility');
     $events->listen('on_project_object_opened', 'on_project_object_opened');
     $events->listen('on_project_object_completed', 'on_project_object_completed');
