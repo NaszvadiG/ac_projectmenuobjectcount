@@ -16,6 +16,7 @@ Step 2. Copy the projectmenuobjectcount folder to activecollab >> application >>
 Step 3. Copy the projectmenuobjectcount images folder to your public\assets\modules folder
 
 Step 4. That's all login in your system and you will find the new Module ready to be installed
+
 Step 5. After installation, please go to main administration page and click on the Project Menu Object Count icon and enable it.
 ================================================================================
 
