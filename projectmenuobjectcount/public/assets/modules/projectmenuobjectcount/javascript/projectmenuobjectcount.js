@@ -1,3 +1,4 @@
+alert('projectmenuobjectcount.js loaded');
 $(document).ready(function(){  /*run after jQuery loads*/
- alert('projectmenuobjectcount.js loaded');
+ alert('jquery Ready');
 });  /*end ready*/
