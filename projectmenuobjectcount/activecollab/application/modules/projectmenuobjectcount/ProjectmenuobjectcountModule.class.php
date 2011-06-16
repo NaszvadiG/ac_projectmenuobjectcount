@@ -64,10 +64,10 @@
     * @return null
     */
    
-    function defineHandlers(&$events) {
-    $events->listen('on_project_tabs', 'on_project_tabs');
    /*
-	  $events->listen('on_get_project_object_types', 'on_get_project_object_types');
+	 function defineHandlers(&$events) {
+    $events->listen('on_project_tabs', 'on_project_tabs');
+    $events->listen('on_get_project_object_types', 'on_get_project_object_types');
 		$events->listen('on_milestone_objects', 'on_milestone_objects');
     $events->listen('on_milestone_objects_by_visibility', 'on_milestone_objects_by_visibility');
     $events->listen('on_project_object_opened', 'on_project_object_opened');
@@ -81,8 +81,9 @@
     $events->listen('on_copy_project_items', 'on_copy_project_items');
     $events->listen('on_project_permissions', 'on_project_permissions');
     $events->listen('on_get_completable_project_object_types', 'on_get_completable_project_object_types');
-   */
-	 } // defineHandlers
+   }
+	 */
+	 // defineHandlers
    
     
   // ---------------------------------------------------
