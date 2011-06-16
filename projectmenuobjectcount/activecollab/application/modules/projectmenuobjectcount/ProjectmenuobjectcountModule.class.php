@@ -96,7 +96,7 @@
     * @return string
     */
    function getDisplayName() {
-    return lang('Toggle Nested Items');
+    return lang('Project Menu Object Count');
    } // getDisplayName
    
    /**
@@ -106,7 +106,7 @@
     * @return string
     */
    function getDescription() {
-    return lang('Adds a button with sub items for toggling (expand, collapse) nested items, such as checklists.');
+    return lang('Append the project menu tabs with the count of the objects in each.');
    } // getDescription
    
    /**
@@ -116,7 +116,7 @@
     * @return string
     */
    function getUninstallMessage() {
-    return lang('Module will be deactivated. Reactivate to show the Toggle Nested Items button again.');
+    return lang('Module will be deactivated. Reactivate to show the Project Menu Object Count again.');
    } // getUninstallMessage 
     
   }
