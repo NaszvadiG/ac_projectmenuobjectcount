@@ -43,7 +43,8 @@
     * @param Router $r
     * @return null
     */
-    /*
+   function defineRoutes(&$router) { }
+	 /*
    function defineRoutes(&$router) {
     $router->map('project_checklists', 'projects/:project_id/checklists', array('controller' => 'checklists', 'action' => 'index'), array('project_id' => '\d+'));
     $router->map('project_checklists_reorder', 'projects/:project_id/checklists/reorder', array('controller' => 'checklists', 'action' => 'reorder'), array('project_id' => '\d+'));
@@ -64,7 +65,8 @@
     * @return null
     */
    
-   /*
+   function defineHandlers(&$events) { }
+	 /*
 	 function defineHandlers(&$events) {
     $events->listen('on_project_tabs', 'on_project_tabs');
     $events->listen('on_get_project_object_types', 'on_get_project_object_types');
