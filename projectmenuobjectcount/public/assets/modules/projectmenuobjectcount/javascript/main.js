@@ -10,9 +10,10 @@ $(document).ready(function(){  /*run after jQuery loads*/
 		//$('#tabs li').each(
 		$('#tabs div.container ul li').each(
 			function(){ 
-				alert( $(this).attr('id').replace('page_tab_',''));
-				/*
-				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+$(this).attr('id').replace('page_tab_','')+"&token="+userAPI+"&format=json", 
+				//alert( $(this).attr('id').replace('page_tab_',''));
+				tabName = '';
+				tabName = $(this).attr('id').replace('page_tab_','');
+				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
 						if (json == null){ 
 							jsonDataLength = "0"; 
@@ -23,7 +24,6 @@ $(document).ready(function(){  /*run after jQuery loads*/
 						//alert("JSON Data: " + jsonDataLength);
 					} //end function
 				); //end getJSON
-				*/
 			} //end function
 		); //end each
 	
