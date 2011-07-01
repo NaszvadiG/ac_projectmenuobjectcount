@@ -8,12 +8,13 @@ $(document).ready(function(){  /*run after jQuery loads*/
 		var userAPI = "23-NpUO6eVFmKrfLv1FDIeoglDc4hmqKu51dIUhspu4";
 		var currentProjectID = "29";
 		//$('#tabs div.container ul li').each(
-		window.my_objTabData = {objCount : 0};
+		window.my_objTabData = {currentTab : ""};
 		$('#tabs li').each(
 			function(){ 
 				tabName = '';
 				tabName = $(this).attr('id').replace('page_tab_','');
-				window.my_objTabData.objCount = -1;
+				window.my_objTabData.currentTab = "";
+				window.my_objTabData.currentTab = $(this).attr('id');
 				//alert(tabName);				
 				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
@@ -22,15 +23,12 @@ $(document).ready(function(){  /*run after jQuery loads*/
 						} else {
 							jsonDataLength = json.length;
 						} //end if
-						window.my_objTabData.objCount = 12;//jsonDataLength;
+						$('#'+window.my_objTabData.currentTab).find('.count').text('('+jsonDataLength+')').show();
+						alert(window.my_objTabData.currentTab+": JSON length: " + jsonDataLength);
+						alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
+					;
 					} //end function
 				); //end getJSON
-				if(window.my_objTabData.objCount != -1) {
-					objectJsonDataLength =  window.my_objTabData.objCount;   //objectJsonData.length;
-					$(this).find('.count').text('('+objectJsonDataLength+')').show();
-					alert(tabName+ "JSON length: " + objectJsonDataLength);
-					alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
-				} //end if window.my_objTabData.objCount !== -1
 			} //end function
 		); //end each
 	} //end if Vid
