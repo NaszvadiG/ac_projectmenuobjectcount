@@ -13,6 +13,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 				tabName = '';
 				tabName = $(this).attr('id').replace('page_tab_','');
 				//alert(tabName);				
+				jsonDataLength = 0;
 				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
 						if (json == null){ 
