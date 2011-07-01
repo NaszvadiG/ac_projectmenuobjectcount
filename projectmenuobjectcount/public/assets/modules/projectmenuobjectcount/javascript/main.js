@@ -24,7 +24,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 					} //end function
 				); //end getJSON
 				if (objectJsonData !== null) {
-					objectJsonDataLength = objectJsonData.length;
+					objectJsonDataLength = objectJsonData.json.length;
 					$(this).find('.count').text('('+objectJsonDataLength+')').show();
 					//alert(tabName+ "JSON length: " + objectJsonDataLength);
 					//alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
