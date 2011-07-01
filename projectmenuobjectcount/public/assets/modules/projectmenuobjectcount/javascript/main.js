@@ -21,8 +21,8 @@ $(document).ready(function(){  /*run after jQuery loads*/
 							jsonDataLength = json.length;
 						} 
 						$(this).find('.count').text('('+jsonDataLength+')').show();
-						alert("JSON Data: " + jsonDataLength);
-						alert("this .count text"+$(this).find('.count').text());
+						alert(tabName+ "JSON length: " + jsonDataLength);
+						alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
 					} //end function
 				); //end getJSON
 			} //end function
