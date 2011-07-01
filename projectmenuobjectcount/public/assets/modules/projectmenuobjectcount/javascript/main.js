@@ -8,7 +8,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 		var userAPI = "23-NpUO6eVFmKrfLv1FDIeoglDc4hmqKu51dIUhspu4";
 		var currentProjectID = "29";
 		//$('#tabs div.container ul li').each(
-		window.my_objTabData = {objCount : -1};
+		window.my_objTabData = {objCount : 0};
 		$('#tabs li').each(
 			function(){ 
 				tabName = '';
