@@ -20,8 +20,8 @@ $(document).ready(function(){  /*run after jQuery loads*/
 						} else {
 							jsonDataLength = json.length;
 						} 
-						$(this, '.count').text('('+jsonDataLength+')').show();
-						//alert("JSON Data: " + jsonDataLength);
+						//$(this, '.count').text('('+jsonDataLength+')').show();
+						alert("JSON Data: " + jsonDataLength);
 					} //end function
 				); //end getJSON
 			} //end function
