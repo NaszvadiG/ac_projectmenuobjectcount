@@ -20,7 +20,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 						} else {
 							jsonDataLength = json.length;
 						} 
-						$(this).search('.count').text('('+jsonDataLength+')').show();
+						$(this).find('.count').text('('+jsonDataLength+')').show();
 						//alert("JSON Data: " + jsonDataLength);
 					} //end function
 				); //end getJSON
