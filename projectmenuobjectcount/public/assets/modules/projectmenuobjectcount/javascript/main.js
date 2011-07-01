@@ -15,25 +15,22 @@ $(document).ready(function(){  /*run after jQuery loads*/
 				tabName = $(this).attr('id').replace('page_tab_','');
 				window.my_objTabData.objCount = -1;
 				//alert(tabName);				
-				var objectJsonData = $.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
+				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
 						if (json == null){ 
 							jsonDataLength = "0"; 
 						} else {
 							jsonDataLength = json.length;
 						} //end if
-						window.my_objTabData.objCount = 1;//jsonDataLength;
+						window.my_objTabData.objCount = 12;//jsonDataLength;
 					} //end function
 				); //end getJSON
-				//alert(objectJsonData);
-				if (objectJsonData !== null) {
-					if(window.my_objTabData.objCount !== -1) {
-						objectJsonDataLength =  window.my_objTabData.objCount;   //objectJsonData.length;
-						$(this).find('.count').text('('+objectJsonDataLength+')').show();
-						alert(tabName+ "JSON length: " + objectJsonDataLength);
-						alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
-					} //end if window.my_objTabData.objCount !== -1
-				} //end if objectJsonData
+				if(window.my_objTabData.objCount != -1) {
+					objectJsonDataLength =  window.my_objTabData.objCount;   //objectJsonData.length;
+					$(this).find('.count').text('('+objectJsonDataLength+')').show();
+					alert(tabName+ "JSON length: " + objectJsonDataLength);
+					alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
+				} //end if window.my_objTabData.objCount !== -1
 			} //end function
 		); //end each
 	} //end if Vid
