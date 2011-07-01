@@ -4,7 +4,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 	//javascript: 
 	if($('#logged_user span.inner').text().search('Welcome back Vid') !== -1 ) {
 		//$('#tabs div.container ul li a span').not('.count').addClass('count').append(' (#)');
-		$('#tabs div.container ul li a span').not(' .count').append(' (<span class="count"></span>)');
+		$('#tabs div.container ul li a span').not(' .count').append(' <span class="count" style="display:none;">()</span>');
 		var userAPI = "23-NpUO6eVFmKrfLv1FDIeoglDc4hmqKu51dIUhspu4";
 		var currentProjectID = "29";
 		//$('#tabs li').each(
@@ -18,7 +18,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 							jsonDataLength = json.length;
 						} 
 						alert( $(this).attr('id').replace('page_tab_',''));
-						$(this, '.count').text(jsonDataLength);
+						$(this, '.count').text('('+jsonDataLength+')').show();
 						alert("JSON Data: " + jsonDataLength);
 					} //end function
 				); //end get
