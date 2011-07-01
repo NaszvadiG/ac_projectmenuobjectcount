@@ -13,7 +13,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 				tabName = '';
 				tabName = $(this).attr('id').replace('page_tab_','');
 				//alert(tabName);				
-				var objectJsonDataLength = $.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
+				var objectJsonData = $.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
 						if (json == null){ 
 							jsonDataLength = "0"; 
@@ -23,11 +23,12 @@ $(document).ready(function(){  /*run after jQuery loads*/
 						return jsonDataLength;
 					} //end function
 				); //end getJSON
-				$(this).find('.count').text('('+objectJsonDataLength+')').show();
-				//$('#page_tab_'+tabName).find('.count').text('('+jsonDataLength+')').show();
-				alert(tabName+ "JSON length: " + jsonDataLength);
-				alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
-
+				if (objectJsonData !== null) {
+					objectJsonDataLength = objectJsonData.length;
+					$(this).find('.count').text('('+objectJsonDataLength+')').show();
+					//alert(tabName+ "JSON length: " + objectJsonDataLength);
+					//alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
+				} //end if objectJsonData
 			} //end function
 		); //end each
 	} //end if Vid
