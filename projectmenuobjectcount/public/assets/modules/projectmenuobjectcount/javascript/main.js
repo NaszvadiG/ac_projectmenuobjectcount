@@ -7,10 +7,10 @@ $(document).ready(function(){  /*run after jQuery loads*/
 		$('#tabs div.container ul li a span').not(' .count').append(' <i class="count" style="display:none;">()</i>');
 		var userAPI = "23-NpUO6eVFmKrfLv1FDIeoglDc4hmqKu51dIUhspu4";
 		var currentProjectID = "29";
-		//$('#tabs li').each(
-		$('#tabs div.container ul li').each(
+		//$('#tabs div.container ul li').each(
+		$('#tabs li').each(
 			function(){ 
-				//alert( $(this).attr('id').replace('page_tab_',''));
+				alert( $(this).attr('id').replace('page_tab_',''));
 				tabName = '';
 				tabName = $(this).attr('id').replace('page_tab_','');
 				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
@@ -21,7 +21,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 							jsonDataLength = json.length;
 						} 
 						$(this).find('.count').text('('+jsonDataLength+')').show();
-						//alert("JSON Data: " + jsonDataLength);
+						alert("JSON Data: " + jsonDataLength);
 					} //end function
 				); //end getJSON
 			} //end function
