@@ -12,19 +12,19 @@ $(document).ready(function(){  /*run after jQuery loads*/
 			function(){ 
 				tabName = '';
 				tabName = $(this).attr('id').replace('page_tab_','');
-				alert(tabName);				
+				//alert(tabName);				
 				$.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
 						if (json == null){ 
 							jsonDataLength = "0"; 
 						} else {
 							jsonDataLength = json.length;
-						} 
-						$(this).find('.count').text('('+jsonDataLength+')').show();
-						alert(tabName+ "JSON length: " + jsonDataLength);
-						alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
+						} //end if
 					} //end function
 				); //end getJSON
+				$(this).find('.count').text('('+jsonDataLength+')').show();
+				alert(tabName+ "JSON length: " + jsonDataLength);
+				alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
 			} //end function
 		); //end each
 	} //end if Vid
