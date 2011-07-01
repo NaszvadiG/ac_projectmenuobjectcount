@@ -24,9 +24,8 @@ $(document).ready(function(){  /*run after jQuery loads*/
 							jsonDataLength = json.length;
 						} //end if
 						$('#'+window.my_objTabData.currentTab).find('.count').text('('+jsonDataLength+')').show();
-						alert(window.my_objTabData.currentTab+": JSON length: " + jsonDataLength);
-						alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
-					;
+						//alert(window.my_objTabData.currentTab+": JSON length: " + jsonDataLength);
+						alert("This ("+$('#'+window.my_objTabData.currentTab).attr('id')+") .count text: "+$('#'+window.my_objTabData.currentTab).find('.count').text());
 					} //end function
 				); //end getJSON
 			} //end function
