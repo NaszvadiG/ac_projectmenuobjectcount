@@ -12,6 +12,7 @@ $(document).ready(function(){  /*run after jQuery loads*/
 			function(){ 
 				tabName = '';
 				tabName = $(this).attr('id').replace('page_tab_','');
+				window.my_objTabData = {objCount : 0};
 				//alert(tabName);				
 				var objectJsonData = $.getJSON("http://vpfa-dev.uoregon.edu/activeCollab/public/api.php?path_info=/projects/"+currentProjectID+"/"+tabName+"&token="+userAPI+"&format=json", 
 					function(json) {
@@ -20,14 +21,15 @@ $(document).ready(function(){  /*run after jQuery loads*/
 						} else {
 							jsonDataLength = json.length;
 						} //end if
-						return jsonDataLength;
+						window.my_objTabData = {objCount : jsonDataLength};
 					} //end function
 				); //end getJSON
+				//alert(objectJsonData);
 				if (objectJsonData !== null) {
-					objectJsonDataLength = objectJsonData.json.length;
+					objectJsonDataLength =  window.my_objTabData.objCount;   //objectJsonData.length;
 					$(this).find('.count').text('('+objectJsonDataLength+')').show();
-					//alert(tabName+ "JSON length: " + objectJsonDataLength);
-					//alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
+					alert(tabName+ "JSON length: " + objectJsonDataLength);
+					alert("This ("+$(this).attr('id')+") .count text: "+$(this).find('.count').text());
 				} //end if objectJsonData
 			} //end function
 		); //end each
